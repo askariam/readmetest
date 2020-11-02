@@ -172,13 +172,6 @@ python test_flaskr.py
 }
 ```
 
-curl --location --request GET 'http://localhost:5000/questions?page=20'
-
-{
-  "error": 404,
-  "message": "resource not found",
-  "success": false
-}
 #### GET /categories
 
 - General: returns all categories of the questions
@@ -317,4 +310,14 @@ curl --location --request POST 'http://localhost:5000/quizzes' \
 }
 ```
 
+### Error Handling
+- The application returns 3 different types of errors: 400, 404, and 422
+- Sample: `curl --location --request GET 'http://localhost:5000/questions?page=20'`
+```
+{
+  "error": 404,
+  "message": "resource not found",
+  "success": false
+}
+```
 
